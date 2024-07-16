@@ -31,3 +31,14 @@ def check_winner(self):
             if self.board[combo[0]] == self.board[combo[1]] == self.board[combo[2]] != "":
                 return True
         return False
+
+def reset_game(self):
+        self.current_player = "X"
+        self.board = [""] * 9
+        for button in self.buttons:
+            button.config(text="")
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    game = TicTacToe(root)
+    root.mainloop()
