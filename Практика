@@ -8,3 +8,21 @@ class TicTacToe:
 
         self.current_player = "X"
         self.board = [""] * 9
+def make_move(self, index):
+    if self.board[index] == "" and not self.check_winner():
+        self.board[index] = self.current_player
+        self.buttons[index].config(text=self.current_player)
+        if self.check_winner():
+            messagebox.showinfo("Победа!", f"Игрок {self.current_player} победил!")
+            self.reset_game()
+        elif "" not in self.board:
+            messagebox.showinfo("Ничья", "Игра закончилась вничью!")
+            self.reset_game()
+        else:
+            self.current_player = "O" if self.current_player == "X" else "X"
+
+def check_winner(self):
+    win_combinations = [
+        (0, 1, 2), (3, 4, 5), (6, 7, 8),
+        (0, 3, 6), (1, 4, 7), (2, 5, 8),
+        (0, 4, 8), (2, 4, 6)
